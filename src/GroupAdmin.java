@@ -21,6 +21,7 @@ public class GroupAdmin implements Sender{
     @Override
     public void register(Member obj) {
         customers.add(obj);
+        obj.update(usb);
     }
 
     /**
@@ -40,7 +41,7 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void insert(int offset, String obj) {
-    usb.insert(offset,obj);
+        usb.insert(offset,obj);
     }
 
     /**
@@ -51,7 +52,7 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void append(String obj) {
-    usb.append(obj);
+        usb.append(obj);
     }
 
     /**
@@ -63,7 +64,7 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void delete(int start, int end) {
-    usb.delete(start,end);
+        usb.delete(start,end);
     }
 
     /**
@@ -71,6 +72,12 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void undo() {
-    usb.undo();
+        usb.undo();
     }
+
+//    public void notify(UndoableStringBuilder usb){
+//        for (Member member: customers){
+//            member.update(usb);
+//        }
+//    }
 }
