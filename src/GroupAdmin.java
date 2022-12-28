@@ -30,7 +30,9 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void unregister(Member obj) {
+
         customers.remove(obj);
+        //obj=null;
     }
 
     /**
@@ -41,7 +43,9 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void insert(int offset, String obj) {
+
         usb.insert(offset,obj);
+        notify(usb);
     }
 
     /**
@@ -52,7 +56,9 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void append(String obj) {
+
         usb.append(obj);
+        notify(usb);
     }
 
     /**
@@ -64,7 +70,9 @@ public class GroupAdmin implements Sender{
      */
     @Override
     public void delete(int start, int end) {
+
         usb.delete(start,end);
+        notify(usb);
     }
 
     /**
@@ -73,11 +81,36 @@ public class GroupAdmin implements Sender{
     @Override
     public void undo() {
         usb.undo();
+        notify(usb);
     }
 
-//    public void notify(UndoableStringBuilder usb){
-//        for (Member member: customers){
-//            member.update(usb);
-//        }
+    /**
+     * This function notify all the members
+     * @param usb
+     */
+    public void notify(UndoableStringBuilder usb){
+        for (Member member: customers){
+            member.update(usb);
+        }
+    }
+    //Getters and Setters
+    public UndoableStringBuilder getUsb() {
+        return usb;
+    }
+
+    public void setUsb(UndoableStringBuilder usb) {
+        this.usb = usb;
+    }
+
+    public ArrayList<Member> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(ArrayList<Member> customers) {
+        this.customers = customers;
+    }
+
+//    public String toString(){
+//
 //    }
 }
