@@ -53,10 +53,10 @@ public class Tests {
     void testAppend() {
         groupAdmin.register(member1);
         groupAdmin.append("kfir");
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
         groupAdmin.register(member2);
         groupAdmin.append("Gozlan");
-        assertEquals(groupAdmin.getUsb(),member2.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member2.getUsbMem().toString());
 
     }
 
@@ -65,11 +65,11 @@ public class Tests {
         groupAdmin.register(member1);
         groupAdmin.append("Roy");
         groupAdmin.delete(1,3);
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
         groupAdmin.register(member2);
         groupAdmin.append("Hello!");
         groupAdmin.delete(1,3);
-        assertEquals(groupAdmin.getUsb(),member2.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member2.getUsbMem().toString());
     }
 
     @Test
@@ -77,10 +77,10 @@ public class Tests {
         groupAdmin.register(member1);
         groupAdmin.append("to");
         groupAdmin.insert(1,"mer");
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
         groupAdmin.register(member2);
         groupAdmin.insert(5," Hello!");
-        assertEquals(groupAdmin.getUsb(),member2.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member2.getUsbMem().toString());
     }
 
 
@@ -89,29 +89,29 @@ public class Tests {
         groupAdmin.register(member1);
         groupAdmin.append("Hello");
         groupAdmin.undo();
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
         groupAdmin.append("Hello");
         groupAdmin.insert(2,"#");
         groupAdmin.undo();
         groupAdmin.undo();
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
     }
     @Test
     public void testNotify(){
         groupAdmin.register(member1);
         groupAdmin.append("s");
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
         groupAdmin.register(member2);
-        assertTrue(groupAdmin.getUsb().equals(member2.getUsbMem()));
+        assertEquals(groupAdmin.getUsb().toString(),member2.getUsbMem().toString());
     }
     @Test
     public void testUpdate(){
         groupAdmin.register(member1);
         groupAdmin.append("kfir");
-        assertEquals(groupAdmin.getUsb(),member1.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member1.getUsbMem().toString());
         groupAdmin.register(member2);
         groupAdmin.append("Gozlan");
-        assertEquals(groupAdmin.getUsb(),member2.getUsbMem());
+        assertEquals(groupAdmin.getUsb().toString(),member2.getUsbMem().toString());
 
     }
 }
