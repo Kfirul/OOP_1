@@ -40,12 +40,12 @@ public class Tests {
     @Test
     public void testUnregister() {
         groupAdmin.register(member1);
+        groupAdmin.register(member2);
         groupAdmin.unregister(member1);
+        assertEquals(1,groupAdmin.getCustomers().size());
+        groupAdmin.unregister(member2);
         assertEquals(0,groupAdmin.getCustomers().size());
-        groupAdmin.append("s");
-        System.out.println(groupAdmin.getUsb());
-        System.out.println(member1.getUsbMem());
-        assertTrue(!groupAdmin.getUsb().equals(member1.getUsbMem()));
+
     }
 
 

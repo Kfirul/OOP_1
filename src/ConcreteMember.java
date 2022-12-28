@@ -9,8 +9,6 @@ public class ConcreteMember implements Member{
     @Override
     public void update(UndoableStringBuilder usb) {
           usbMem=usb;
-//        usbMem=new UndoableStringBuilder();
-//        usbMem.append(usb.toString());
     }
 
     //Getters abd Setters

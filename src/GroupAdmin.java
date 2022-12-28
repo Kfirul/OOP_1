@@ -21,7 +21,6 @@ public class GroupAdmin implements Sender{
     @Override
     public void register(Member obj) {
         customers.add(obj);
-        obj.update(usb);
     }
 
     /**
@@ -32,7 +31,6 @@ public class GroupAdmin implements Sender{
     public void unregister(Member obj) {
 
         customers.remove(obj);
-        //obj=null;
     }
 
     /**
@@ -98,19 +96,15 @@ public class GroupAdmin implements Sender{
         return usb;
     }
 
-    public void setUsb(UndoableStringBuilder usb) {
-        this.usb = usb;
-    }
+
 
     public ArrayList<Member> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(ArrayList<Member> customers) {
-        this.customers = customers;
-    }
 
-//    public String toString(){
-//
-//    }
+
+    public String toString(){
+    return usb.toString();
+    }
 }
