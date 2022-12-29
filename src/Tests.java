@@ -29,7 +29,7 @@ public class Tests {
 
     ConcreteMember member1=new ConcreteMember();
     ConcreteMember member2=new ConcreteMember();
-    
+
     @Test
     public void testRegister() {
         groupAdmin.register(member1);

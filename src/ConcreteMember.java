@@ -19,4 +19,11 @@ public class ConcreteMember implements Member{
     public void setUsbMem(UndoableStringBuilder usbMem) {
         this.usbMem = usbMem;
     }
+
+    @Override
+    public String toString() {
+        return "ConcreteMember{" +
+                "usbMem=" + usbMem +
+                '}';
+    }
 }

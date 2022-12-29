@@ -103,8 +103,11 @@ public class GroupAdmin implements Sender{
     }
 
 
-
-    public String toString(){
-    return usb.toString();
+    @Override
+    public String toString() {
+        return "GroupAdmin{" +
+                "usb=" + usb +
+                ", customers=" + customers +
+                '}';
     }
 }
